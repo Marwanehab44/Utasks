@@ -1,0 +1,2728 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.0 on win32)" generated="20230908 02:46:26.935" rpa="false" schemaversion="4">
+<suite id="s1" name="Tests" source="C:\Users\zhsz1205\Desktop\Utasks\Tests">
+<suite id="s1-s1" name="Projects and Tasks TCs" source="C:\Users\zhsz1205\Desktop\Utasks\Tests\Projects_and_Tasks_TCs.robot">
+<test id="s1-s1-t1" name="Create a new Project without adding tasks" line="13">
+<kw name="Open_The_Browser" library="common">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${Website_URL}</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230908 02:46:27.445" level="INFO">Opening browser 'gc' to base url 'https://utasks-buggy.web.app/login'.</msg>
+<status status="PASS" starttime="20230908 02:46:27.444" endtime="20230908 02:46:36.275"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230908 02:46:36.275" endtime="20230908 02:46:36.444"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:46:36.444" endtime="20230908 02:46:36.459"/>
+</kw>
+<status status="PASS" starttime="20230908 02:46:27.444" endtime="20230908 02:46:36.459"/>
+</kw>
+<kw name="Successfull sign up and Login" library="Login_Keywords">
+<kw name="GO TO Sign Up" library="common">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://utasks-buggy.web.app/signup</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230908 02:46:36.468" level="INFO">Opening url 'https://utasks-buggy.web.app/signup'</msg>
+<status status="PASS" starttime="20230908 02:46:36.468" endtime="20230908 02:46:36.721"/>
+</kw>
+<status status="PASS" starttime="20230908 02:46:36.465" endtime="20230908 02:46:36.721"/>
+</kw>
+<kw name="Successfull Sigun Up" library="SignUp_Keyword">
+<var>${email}</var>
+<var>${pass}</var>
+<kw name="Generate Random String" library="String">
+<var>${Valid_Username}</var>
+<arg>5</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230908 02:46:36.724" level="INFO">${Valid_Username} = gDfAa</msg>
+<status status="PASS" starttime="20230908 02:46:36.723" endtime="20230908 02:46:36.724"/>
+</kw>
+<kw name="Generate Random String" library="String">
+<var>${Valid_Email}</var>
+<arg>5</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230908 02:46:36.726" level="INFO">${Valid_Email} = ZkvpF</msg>
+<status status="PASS" starttime="20230908 02:46:36.725" endtime="20230908 02:46:36.726"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Valid_Email}</var>
+<arg>${Valid_Email}@utasks.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230908 02:46:36.727" level="INFO">${Valid_Email} = ZkvpF@utasks.com</msg>
+<status status="PASS" starttime="20230908 02:46:36.726" endtime="20230908 02:46:36.727"/>
+</kw>
+<kw name="Sign up" library="SignUp_Keyword">
+<arg>${Valid_Username}</arg>
+<arg>${Valid_Job_title}</arg>
+<arg>${Valid_Company_Name}</arg>
+<arg>${Valid_Email}</arg>
+<arg>${Valid_Pass}</arg>
+<arg>${Valid_confirm_password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Username_locator}</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:46:36.731" level="INFO">Typing text 'gDfAa' into text field '(//input[@class="form-control"])[1]'.</msg>
+<status status="PASS" starttime="20230908 02:46:36.729" endtime="20230908 02:46:37.054"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Job_title_locator}</arg>
+<arg>${Job_title}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:46:37.057" level="INFO">Typing text 'Tester' into text field '(//input[@class="form-control"])[2]'.</msg>
+<status status="PASS" starttime="20230908 02:46:37.055" endtime="20230908 02:46:37.259"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Company_Name_locator}</arg>
+<arg>${Company_Name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:46:37.261" level="INFO">Typing text 'Company Test' into text field '(//input[@class="form-control"])[3]'.</msg>
+<status status="PASS" starttime="20230908 02:46:37.260" endtime="20230908 02:46:37.575"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Email_locator}</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:46:37.578" level="INFO">Typing text 'ZkvpF@utasks.com' into text field '(//input[@class="form-control"])[4]'.</msg>
+<status status="PASS" starttime="20230908 02:46:37.576" endtime="20230908 02:46:37.840"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Password_locator}</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:46:37.842" level="INFO">Typing text '123456' into text field '(//input[@class="form-control"])[5]'.</msg>
+<status status="PASS" starttime="20230908 02:46:37.840" endtime="20230908 02:46:38.049"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Confirm_Password_locator}</arg>
+<arg>${Confirm_Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:46:38.051" level="INFO">Typing text '123456' into text field '(//input[@class="form-control"])[6]'.</msg>
+<status status="PASS" starttime="20230908 02:46:38.049" endtime="20230908 02:46:38.231"/>
+</kw>
+<status status="PASS" starttime="20230908 02:46:36.727" endtime="20230908 02:46:38.231"/>
+</kw>
+<kw name="Click on" library="common">
+<arg>${SignUp Button}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:46:38.234" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20230908 02:46:38.233" endtime="20230908 02:46:38.360"/>
+</kw>
+<status status="PASS" starttime="20230908 02:46:38.231" endtime="20230908 02:46:38.361"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Log In</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230908 02:46:38.447" level="INFO">Current page contains text 'Log In'.</msg>
+<status status="PASS" starttime="20230908 02:46:38.361" endtime="20230908 02:46:38.448"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:46:40.448" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:46:38.448" endtime="20230908 02:46:40.448"/>
+</kw>
+<msg timestamp="20230908 02:46:40.448" level="INFO">${email} = ZkvpF@utasks.com</msg>
+<msg timestamp="20230908 02:46:40.448" level="INFO">${pass} = 123456</msg>
+<status status="PASS" starttime="20230908 02:46:36.722" endtime="20230908 02:46:40.448"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>3</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:46:40.449" endtime="20230908 02:46:40.451"/>
+</kw>
+<kw name="Login" library="Login_Keywords">
+<arg>${email}</arg>
+<arg>${pass}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Email_xpath}</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:46:40.452" level="INFO">Typing text 'ZkvpF@utasks.com' into text field '//*[@id="email"]/input'.</msg>
+<status status="PASS" starttime="20230908 02:46:40.452" endtime="20230908 02:46:40.638"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Password_xpath}</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:46:40.641" level="INFO">Typing text '123456' into text field '//*[@id="password"]/input'.</msg>
+<status status="PASS" starttime="20230908 02:46:40.639" endtime="20230908 02:46:40.948"/>
+</kw>
+<kw name="Click on" library="common">
+<arg>${Login_btn_xpath}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:46:40.951" level="INFO">Clicking element '//*[@id="root"]/div/div/div/div[1]/div/form/button'.</msg>
+<status status="PASS" starttime="20230908 02:46:40.950" endtime="20230908 02:46:41.048"/>
+</kw>
+<status status="PASS" starttime="20230908 02:46:40.949" endtime="20230908 02:46:41.049"/>
+</kw>
+<status status="PASS" starttime="20230908 02:46:40.451" endtime="20230908 02:46:41.049"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:46:43.060" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:46:41.049" endtime="20230908 02:46:43.061"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${Home_Page_assertion}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230908 02:46:43.108" level="INFO">Element '//div[@data-testid="inbox-action"]' is displayed.</msg>
+<status status="PASS" starttime="20230908 02:46:43.061" endtime="20230908 02:46:43.108"/>
+</kw>
+<status status="PASS" starttime="20230908 02:46:36.463" endtime="20230908 02:46:43.108"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>2</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:46:43.109" endtime="20230908 02:46:43.112"/>
+</kw>
+<kw name="Click on Add project text" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Add_project_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:46:43.114" level="INFO">Clicking element '//*[@id="root"]/div/main/section/div[1]/div[2]/span[2]'.</msg>
+<status status="PASS" starttime="20230908 02:46:43.113" endtime="20230908 02:46:43.186"/>
+</kw>
+<status status="PASS" starttime="20230908 02:46:43.113" endtime="20230908 02:46:43.186"/>
+</kw>
+<status status="PASS" starttime="20230908 02:46:43.113" endtime="20230908 02:46:43.186"/>
+</kw>
+<kw name="Add name to the project" library="Projects_Keywords">
+<var>${Pro_name_from_list}</var>
+<kw name="Generate Random String" library="String">
+<var>${Random_num}</var>
+<arg>3</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230908 02:46:43.188" level="INFO">${Random_num} = 742</msg>
+<status status="PASS" starttime="20230908 02:46:43.188" endtime="20230908 02:46:43.188"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Project_name}</var>
+<arg>${Project}${Random_num}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230908 02:46:43.189" level="INFO">${Project_name} = project742</msg>
+<status status="PASS" starttime="20230908 02:46:43.188" endtime="20230908 02:46:43.189"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${name_project_input_field}</arg>
+<arg>${Project_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:46:43.191" level="INFO">Typing text 'project742' into text field '//input[@class="add-project__name"]'.</msg>
+<status status="PASS" starttime="20230908 02:46:43.190" endtime="20230908 02:46:43.361"/>
+</kw>
+<msg timestamp="20230908 02:46:43.361" level="INFO">${Pro_name_from_list} = project742</msg>
+<status status="PASS" starttime="20230908 02:46:43.187" endtime="20230908 02:46:43.362"/>
+</kw>
+<kw name="Click on add Project to Submit Button" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Project_submit_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:46:43.366" level="INFO">Clicking element '//*[@id="root"]/div/main/section/div[1]/div[2]/div/button'.</msg>
+<status status="PASS" starttime="20230908 02:46:43.364" endtime="20230908 02:46:43.457"/>
+</kw>
+<status status="PASS" starttime="20230908 02:46:43.363" endtime="20230908 02:46:43.457"/>
+</kw>
+<status status="PASS" starttime="20230908 02:46:43.362" endtime="20230908 02:46:43.457"/>
+</kw>
+<kw name="Click on added project" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Added_Project_locator}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:46:43.461" level="INFO">Clicking element '(//div[@data-testid="project-action"])[1]'.</msg>
+<status status="PASS" starttime="20230908 02:46:43.459" endtime="20230908 02:46:43.772"/>
+</kw>
+<status status="PASS" starttime="20230908 02:46:43.458" endtime="20230908 02:46:43.772"/>
+</kw>
+<status status="PASS" starttime="20230908 02:46:43.458" endtime="20230908 02:46:43.772"/>
+</kw>
+<kw name="Get the project name from home page" library="Projects_Keywords">
+<var>${name_from_home}</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${name}</var>
+<arg>//h2[@data-testid="project-name"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:46:43.807" level="INFO">${name} = project742</msg>
+<status status="PASS" starttime="20230908 02:46:43.773" endtime="20230908 02:46:43.807"/>
+</kw>
+<msg timestamp="20230908 02:46:43.807" level="INFO">${name_from_home} = project742</msg>
+<status status="PASS" starttime="20230908 02:46:43.773" endtime="20230908 02:46:43.807"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Pro_name_from_list}</arg>
+<arg>${name_from_home}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20230908 02:46:43.808" endtime="20230908 02:46:43.809"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:46:45.823" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:46:43.810" endtime="20230908 02:46:45.823"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230908 02:46:45.824" endtime="20230908 02:46:48.987"/>
+</kw>
+<tag>Happy</tag>
+<tag>Project</tag>
+<status status="PASS" starttime="20230908 02:46:27.443" endtime="20230908 02:46:48.989"/>
+</test>
+<test id="s1-s1-t2" name="Create new project with new Task today" line="27">
+<kw name="Open_The_Browser" library="common">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${Website_URL}</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230908 02:46:48.999" level="INFO">Opening browser 'gc' to base url 'https://utasks-buggy.web.app/login'.</msg>
+<status status="PASS" starttime="20230908 02:46:48.997" endtime="20230908 02:47:27.911"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230908 02:47:27.911" endtime="20230908 02:47:28.059"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:47:28.059" endtime="20230908 02:47:28.062"/>
+</kw>
+<status status="PASS" starttime="20230908 02:46:48.996" endtime="20230908 02:47:28.062"/>
+</kw>
+<kw name="Successfull sign up and Login" library="Login_Keywords">
+<kw name="GO TO Sign Up" library="common">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://utasks-buggy.web.app/signup</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230908 02:47:28.064" level="INFO">Opening url 'https://utasks-buggy.web.app/signup'</msg>
+<status status="PASS" starttime="20230908 02:47:28.064" endtime="20230908 02:47:48.093"/>
+</kw>
+<status status="PASS" starttime="20230908 02:47:28.063" endtime="20230908 02:47:48.093"/>
+</kw>
+<kw name="Successfull Sigun Up" library="SignUp_Keyword">
+<var>${email}</var>
+<var>${pass}</var>
+<kw name="Generate Random String" library="String">
+<var>${Valid_Username}</var>
+<arg>5</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230908 02:47:48.094" level="INFO">${Valid_Username} = dfrQE</msg>
+<status status="PASS" starttime="20230908 02:47:48.094" endtime="20230908 02:47:48.095"/>
+</kw>
+<kw name="Generate Random String" library="String">
+<var>${Valid_Email}</var>
+<arg>5</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230908 02:47:48.096" level="INFO">${Valid_Email} = nIDBL</msg>
+<status status="PASS" starttime="20230908 02:47:48.095" endtime="20230908 02:47:48.096"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Valid_Email}</var>
+<arg>${Valid_Email}@utasks.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230908 02:47:48.096" level="INFO">${Valid_Email} = nIDBL@utasks.com</msg>
+<status status="PASS" starttime="20230908 02:47:48.096" endtime="20230908 02:47:48.096"/>
+</kw>
+<kw name="Sign up" library="SignUp_Keyword">
+<arg>${Valid_Username}</arg>
+<arg>${Valid_Job_title}</arg>
+<arg>${Valid_Company_Name}</arg>
+<arg>${Valid_Email}</arg>
+<arg>${Valid_Pass}</arg>
+<arg>${Valid_confirm_password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Username_locator}</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:47:48.100" level="INFO">Typing text 'dfrQE' into text field '(//input[@class="form-control"])[1]'.</msg>
+<status status="PASS" starttime="20230908 02:47:48.098" endtime="20230908 02:47:48.463"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Job_title_locator}</arg>
+<arg>${Job_title}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:47:48.465" level="INFO">Typing text 'Tester' into text field '(//input[@class="form-control"])[2]'.</msg>
+<status status="PASS" starttime="20230908 02:47:48.463" endtime="20230908 02:47:48.634"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Company_Name_locator}</arg>
+<arg>${Company_Name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:47:48.637" level="INFO">Typing text 'Company Test' into text field '(//input[@class="form-control"])[3]'.</msg>
+<status status="PASS" starttime="20230908 02:47:48.635" endtime="20230908 02:47:48.872"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Email_locator}</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:47:48.874" level="INFO">Typing text 'nIDBL@utasks.com' into text field '(//input[@class="form-control"])[4]'.</msg>
+<status status="PASS" starttime="20230908 02:47:48.873" endtime="20230908 02:47:49.277"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Password_locator}</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:47:49.280" level="INFO">Typing text '123456' into text field '(//input[@class="form-control"])[5]'.</msg>
+<status status="PASS" starttime="20230908 02:47:49.278" endtime="20230908 02:47:49.513"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Confirm_Password_locator}</arg>
+<arg>${Confirm_Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:47:49.515" level="INFO">Typing text '123456' into text field '(//input[@class="form-control"])[6]'.</msg>
+<status status="PASS" starttime="20230908 02:47:49.513" endtime="20230908 02:47:49.779"/>
+</kw>
+<status status="PASS" starttime="20230908 02:47:48.096" endtime="20230908 02:47:49.779"/>
+</kw>
+<kw name="Click on" library="common">
+<arg>${SignUp Button}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:47:49.782" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20230908 02:47:49.780" endtime="20230908 02:47:49.931"/>
+</kw>
+<status status="PASS" starttime="20230908 02:47:49.779" endtime="20230908 02:47:49.931"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Log In</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230908 02:47:49.980" level="INFO">Current page contains text 'Log In'.</msg>
+<status status="PASS" starttime="20230908 02:47:49.931" endtime="20230908 02:47:49.980"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:47:51.996" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:47:49.981" endtime="20230908 02:47:51.996"/>
+</kw>
+<msg timestamp="20230908 02:47:51.997" level="INFO">${email} = nIDBL@utasks.com</msg>
+<msg timestamp="20230908 02:47:51.997" level="INFO">${pass} = 123456</msg>
+<status status="PASS" starttime="20230908 02:47:48.093" endtime="20230908 02:47:51.997"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>3</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:47:51.998" endtime="20230908 02:47:52.003"/>
+</kw>
+<kw name="Login" library="Login_Keywords">
+<arg>${email}</arg>
+<arg>${pass}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Email_xpath}</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:47:52.009" level="INFO">Typing text 'nIDBL@utasks.com' into text field '//*[@id="email"]/input'.</msg>
+<status status="PASS" starttime="20230908 02:47:52.006" endtime="20230908 02:47:52.206"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Password_xpath}</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:47:52.209" level="INFO">Typing text '123456' into text field '//*[@id="password"]/input'.</msg>
+<status status="PASS" starttime="20230908 02:47:52.207" endtime="20230908 02:47:52.348"/>
+</kw>
+<kw name="Click on" library="common">
+<arg>${Login_btn_xpath}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:47:52.350" level="INFO">Clicking element '//*[@id="root"]/div/div/div/div[1]/div/form/button'.</msg>
+<status status="PASS" starttime="20230908 02:47:52.349" endtime="20230908 02:47:52.433"/>
+</kw>
+<status status="PASS" starttime="20230908 02:47:52.348" endtime="20230908 02:47:52.433"/>
+</kw>
+<status status="PASS" starttime="20230908 02:47:52.004" endtime="20230908 02:47:52.434"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:47:54.440" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:47:52.434" endtime="20230908 02:47:54.440"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${Home_Page_assertion}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230908 02:47:54.475" level="INFO">Element '//div[@data-testid="inbox-action"]' is displayed.</msg>
+<status status="PASS" starttime="20230908 02:47:54.440" endtime="20230908 02:47:54.475"/>
+</kw>
+<status status="PASS" starttime="20230908 02:47:28.063" endtime="20230908 02:47:54.475"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>2</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:47:54.476" endtime="20230908 02:47:54.478"/>
+</kw>
+<kw name="Successfull Add new project" library="Projects_Keywords">
+<kw name="Click on Add project text" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Add_project_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:47:54.481" level="INFO">Clicking element '//*[@id="root"]/div/main/section/div[1]/div[2]/span[2]'.</msg>
+<status status="PASS" starttime="20230908 02:47:54.480" endtime="20230908 02:47:54.552"/>
+</kw>
+<status status="PASS" starttime="20230908 02:47:54.479" endtime="20230908 02:47:54.552"/>
+</kw>
+<status status="PASS" starttime="20230908 02:47:54.479" endtime="20230908 02:47:54.552"/>
+</kw>
+<kw name="Add name to the project" library="Projects_Keywords">
+<var>${Pro_name_from_list}</var>
+<kw name="Generate Random String" library="String">
+<var>${Random_num}</var>
+<arg>3</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230908 02:47:54.554" level="INFO">${Random_num} = 004</msg>
+<status status="PASS" starttime="20230908 02:47:54.553" endtime="20230908 02:47:54.554"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Project_name}</var>
+<arg>${Project}${Random_num}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230908 02:47:54.555" level="INFO">${Project_name} = project004</msg>
+<status status="PASS" starttime="20230908 02:47:54.554" endtime="20230908 02:47:54.555"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${name_project_input_field}</arg>
+<arg>${Project_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:47:54.556" level="INFO">Typing text 'project004' into text field '//input[@class="add-project__name"]'.</msg>
+<status status="PASS" starttime="20230908 02:47:54.555" endtime="20230908 02:47:54.697"/>
+</kw>
+<msg timestamp="20230908 02:47:54.698" level="INFO">${Pro_name_from_list} = project004</msg>
+<status status="PASS" starttime="20230908 02:47:54.553" endtime="20230908 02:47:54.698"/>
+</kw>
+<kw name="Click on add Project to Submit Button" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Project_submit_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:47:54.700" level="INFO">Clicking element '//*[@id="root"]/div/main/section/div[1]/div[2]/div/button'.</msg>
+<status status="PASS" starttime="20230908 02:47:54.699" endtime="20230908 02:47:54.781"/>
+</kw>
+<status status="PASS" starttime="20230908 02:47:54.699" endtime="20230908 02:47:54.781"/>
+</kw>
+<status status="PASS" starttime="20230908 02:47:54.698" endtime="20230908 02:47:54.781"/>
+</kw>
+<kw name="Click on added project" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Added_Project_locator}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:47:54.783" level="INFO">Clicking element '(//div[@data-testid="project-action"])[1]'.</msg>
+<status status="PASS" starttime="20230908 02:47:54.782" endtime="20230908 02:47:55.100"/>
+</kw>
+<status status="PASS" starttime="20230908 02:47:54.782" endtime="20230908 02:47:55.100"/>
+</kw>
+<status status="PASS" starttime="20230908 02:47:54.782" endtime="20230908 02:47:55.101"/>
+</kw>
+<kw name="Get the project name from home page" library="Projects_Keywords">
+<var>${name_from_home}</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${name}</var>
+<arg>//h2[@data-testid="project-name"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:47:55.142" level="INFO">${name} = project004</msg>
+<status status="PASS" starttime="20230908 02:47:55.102" endtime="20230908 02:47:55.142"/>
+</kw>
+<msg timestamp="20230908 02:47:55.142" level="INFO">${name_from_home} = project004</msg>
+<status status="PASS" starttime="20230908 02:47:55.101" endtime="20230908 02:47:55.142"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Pro_name_from_list}</arg>
+<arg>${name_from_home}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20230908 02:47:55.142" endtime="20230908 02:47:55.142"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:47:57.153" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:47:55.142" endtime="20230908 02:47:57.153"/>
+</kw>
+<status status="PASS" starttime="20230908 02:47:54.479" endtime="20230908 02:47:57.153"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:47:59.163" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:47:57.154" endtime="20230908 02:47:59.164"/>
+</kw>
+<kw name="Click on Add Task text" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${tasks_text_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:47:59.172" level="INFO">Clicking element '//span[@class="add-task__text"]'.</msg>
+<status status="PASS" starttime="20230908 02:47:59.169" endtime="20230908 02:47:59.254"/>
+</kw>
+<status status="PASS" starttime="20230908 02:47:59.168" endtime="20230908 02:47:59.255"/>
+</kw>
+<status status="PASS" starttime="20230908 02:47:59.166" endtime="20230908 02:47:59.255"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>2</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:47:59.257" endtime="20230908 02:47:59.260"/>
+</kw>
+<kw name="Enter Task Name" library="Projects_Keywords">
+<kw name="Generate Random String" library="String">
+<var>${Tasks_name}</var>
+<arg>6</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230908 02:47:59.262" level="INFO">${Tasks_name} = PWVHYX</msg>
+<status status="PASS" starttime="20230908 02:47:59.262" endtime="20230908 02:47:59.263"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${tasks_input_field}</arg>
+<arg>${Tasks_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:47:59.265" level="INFO">Typing text 'PWVHYX' into text field '//input[@class="add-task__content"]'.</msg>
+<status status="PASS" starttime="20230908 02:47:59.263" endtime="20230908 02:47:59.423"/>
+</kw>
+<status status="PASS" starttime="20230908 02:47:59.261" endtime="20230908 02:47:59.423"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>2</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:47:59.424" endtime="20230908 02:47:59.427"/>
+</kw>
+<kw name="Click on date picker" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${date_picker_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:47:59.429" level="INFO">Clicking element '//span[@class="add-task__date"]'.</msg>
+<status status="PASS" starttime="20230908 02:47:59.428" endtime="20230908 02:47:59.509"/>
+</kw>
+<status status="PASS" starttime="20230908 02:47:59.428" endtime="20230908 02:47:59.509"/>
+</kw>
+<status status="PASS" starttime="20230908 02:47:59.428" endtime="20230908 02:47:59.509"/>
+</kw>
+<kw name="Click on Today date" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${today_date}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:47:59.513" level="INFO">Clicking element '//div[@data-testid="task-date-today"]'.</msg>
+<status status="PASS" starttime="20230908 02:47:59.512" endtime="20230908 02:47:59.594"/>
+</kw>
+<status status="PASS" starttime="20230908 02:47:59.511" endtime="20230908 02:47:59.594"/>
+</kw>
+<status status="PASS" starttime="20230908 02:47:59.510" endtime="20230908 02:47:59.594"/>
+</kw>
+<kw name="Click on Add task button to Submit" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Submit_task_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:47:59.598" level="INFO">Clicking element '//button[@class="add-task__submit"]'.</msg>
+<status status="PASS" starttime="20230908 02:47:59.596" endtime="20230908 02:47:59.671"/>
+</kw>
+<status status="PASS" starttime="20230908 02:47:59.595" endtime="20230908 02:47:59.672"/>
+</kw>
+<status status="PASS" starttime="20230908 02:47:59.595" endtime="20230908 02:47:59.672"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:48:01.682" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:47:59.673" endtime="20230908 02:48:01.682"/>
+</kw>
+<kw name="Click on Today Tab" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Today_tab}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:48:01.684" level="INFO">Clicking element '//div[@data-testid="today-action"]'.</msg>
+<status status="PASS" starttime="20230908 02:48:01.683" endtime="20230908 02:48:01.754"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:01.683" endtime="20230908 02:48:01.755"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:01.683" endtime="20230908 02:48:01.755"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>2</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:48:01.755" endtime="20230908 02:48:01.757"/>
+</kw>
+<kw name="Task should be exist" library="Projects_Keywords">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${task in list}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230908 02:48:02.023" level="INFO">Element '//*[@id="root"]/div/main/section/div[2]/ul/li/span' is displayed.</msg>
+<status status="PASS" starttime="20230908 02:48:01.758" endtime="20230908 02:48:02.023"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:01.758" endtime="20230908 02:48:02.023"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:48:04.038" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:48:02.024" endtime="20230908 02:48:04.038"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230908 02:48:04.039" endtime="20230908 02:48:07.433"/>
+</kw>
+<tag>Happy</tag>
+<tag>Project</tag>
+<status status="PASS" starttime="20230908 02:46:48.994" endtime="20230908 02:48:07.433"/>
+</test>
+<test id="s1-s1-t3" name="Create new project with new Task Tomorrow" line="47">
+<kw name="Open_The_Browser" library="common">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${Website_URL}</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230908 02:48:07.438" level="INFO">Opening browser 'gc' to base url 'https://utasks-buggy.web.app/login'.</msg>
+<status status="PASS" starttime="20230908 02:48:07.437" endtime="20230908 02:48:16.085"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230908 02:48:16.085" endtime="20230908 02:48:16.243"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:48:16.243" endtime="20230908 02:48:16.246"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:07.436" endtime="20230908 02:48:16.246"/>
+</kw>
+<kw name="Successfull sign up and Login" library="Login_Keywords">
+<kw name="GO TO Sign Up" library="common">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://utasks-buggy.web.app/signup</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230908 02:48:16.255" level="INFO">Opening url 'https://utasks-buggy.web.app/signup'</msg>
+<status status="PASS" starttime="20230908 02:48:16.255" endtime="20230908 02:48:16.426"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:16.253" endtime="20230908 02:48:16.427"/>
+</kw>
+<kw name="Successfull Sigun Up" library="SignUp_Keyword">
+<var>${email}</var>
+<var>${pass}</var>
+<kw name="Generate Random String" library="String">
+<var>${Valid_Username}</var>
+<arg>5</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230908 02:48:16.428" level="INFO">${Valid_Username} = gGHXC</msg>
+<status status="PASS" starttime="20230908 02:48:16.428" endtime="20230908 02:48:16.428"/>
+</kw>
+<kw name="Generate Random String" library="String">
+<var>${Valid_Email}</var>
+<arg>5</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230908 02:48:16.429" level="INFO">${Valid_Email} = DokED</msg>
+<status status="PASS" starttime="20230908 02:48:16.429" endtime="20230908 02:48:16.430"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Valid_Email}</var>
+<arg>${Valid_Email}@utasks.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230908 02:48:16.432" level="INFO">${Valid_Email} = DokED@utasks.com</msg>
+<status status="PASS" starttime="20230908 02:48:16.430" endtime="20230908 02:48:16.432"/>
+</kw>
+<kw name="Sign up" library="SignUp_Keyword">
+<arg>${Valid_Username}</arg>
+<arg>${Valid_Job_title}</arg>
+<arg>${Valid_Company_Name}</arg>
+<arg>${Valid_Email}</arg>
+<arg>${Valid_Pass}</arg>
+<arg>${Valid_confirm_password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Username_locator}</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:48:16.436" level="INFO">Typing text 'gGHXC' into text field '(//input[@class="form-control"])[1]'.</msg>
+<status status="PASS" starttime="20230908 02:48:16.435" endtime="20230908 02:48:16.705"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Job_title_locator}</arg>
+<arg>${Job_title}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:48:16.707" level="INFO">Typing text 'Tester' into text field '(//input[@class="form-control"])[2]'.</msg>
+<status status="PASS" starttime="20230908 02:48:16.705" endtime="20230908 02:48:16.867"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Company_Name_locator}</arg>
+<arg>${Company_Name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:48:16.868" level="INFO">Typing text 'Company Test' into text field '(//input[@class="form-control"])[3]'.</msg>
+<status status="PASS" starttime="20230908 02:48:16.867" endtime="20230908 02:48:17.056"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Email_locator}</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:48:17.057" level="INFO">Typing text 'DokED@utasks.com' into text field '(//input[@class="form-control"])[4]'.</msg>
+<status status="PASS" starttime="20230908 02:48:17.056" endtime="20230908 02:48:17.273"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Password_locator}</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:48:17.276" level="INFO">Typing text '123456' into text field '(//input[@class="form-control"])[5]'.</msg>
+<status status="PASS" starttime="20230908 02:48:17.274" endtime="20230908 02:48:17.436"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Confirm_Password_locator}</arg>
+<arg>${Confirm_Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:48:17.438" level="INFO">Typing text '123456' into text field '(//input[@class="form-control"])[6]'.</msg>
+<status status="PASS" starttime="20230908 02:48:17.436" endtime="20230908 02:48:17.623"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:16.433" endtime="20230908 02:48:17.623"/>
+</kw>
+<kw name="Click on" library="common">
+<arg>${SignUp Button}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:48:17.626" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20230908 02:48:17.625" endtime="20230908 02:48:17.730"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:17.624" endtime="20230908 02:48:17.730"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Log In</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230908 02:48:17.770" level="INFO">Current page contains text 'Log In'.</msg>
+<status status="PASS" starttime="20230908 02:48:17.731" endtime="20230908 02:48:17.770"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:48:19.779" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:48:17.770" endtime="20230908 02:48:19.779"/>
+</kw>
+<msg timestamp="20230908 02:48:19.779" level="INFO">${email} = DokED@utasks.com</msg>
+<msg timestamp="20230908 02:48:19.780" level="INFO">${pass} = 123456</msg>
+<status status="PASS" starttime="20230908 02:48:16.427" endtime="20230908 02:48:19.780"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>3</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:48:19.780" endtime="20230908 02:48:19.782"/>
+</kw>
+<kw name="Login" library="Login_Keywords">
+<arg>${email}</arg>
+<arg>${pass}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Email_xpath}</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:48:19.785" level="INFO">Typing text 'DokED@utasks.com' into text field '//*[@id="email"]/input'.</msg>
+<status status="PASS" starttime="20230908 02:48:19.784" endtime="20230908 02:48:20.050"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Password_xpath}</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:48:20.052" level="INFO">Typing text '123456' into text field '//*[@id="password"]/input'.</msg>
+<status status="PASS" starttime="20230908 02:48:20.050" endtime="20230908 02:48:20.224"/>
+</kw>
+<kw name="Click on" library="common">
+<arg>${Login_btn_xpath}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:48:20.227" level="INFO">Clicking element '//*[@id="root"]/div/div/div/div[1]/div/form/button'.</msg>
+<status status="PASS" starttime="20230908 02:48:20.225" endtime="20230908 02:48:20.330"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:20.224" endtime="20230908 02:48:20.330"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:19.783" endtime="20230908 02:48:20.330"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:48:22.343" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:48:20.330" endtime="20230908 02:48:22.344"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${Home_Page_assertion}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230908 02:48:22.402" level="INFO">Element '//div[@data-testid="inbox-action"]' is displayed.</msg>
+<status status="PASS" starttime="20230908 02:48:22.344" endtime="20230908 02:48:22.402"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:16.252" endtime="20230908 02:48:22.402"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>2</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:48:22.403" endtime="20230908 02:48:22.404"/>
+</kw>
+<kw name="Successfull Add new project" library="Projects_Keywords">
+<kw name="Click on Add project text" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Add_project_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:48:22.407" level="INFO">Clicking element '//*[@id="root"]/div/main/section/div[1]/div[2]/span[2]'.</msg>
+<status status="PASS" starttime="20230908 02:48:22.407" endtime="20230908 02:48:22.479"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:22.405" endtime="20230908 02:48:22.480"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:22.405" endtime="20230908 02:48:22.480"/>
+</kw>
+<kw name="Add name to the project" library="Projects_Keywords">
+<var>${Pro_name_from_list}</var>
+<kw name="Generate Random String" library="String">
+<var>${Random_num}</var>
+<arg>3</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230908 02:48:22.481" level="INFO">${Random_num} = 942</msg>
+<status status="PASS" starttime="20230908 02:48:22.481" endtime="20230908 02:48:22.481"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Project_name}</var>
+<arg>${Project}${Random_num}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230908 02:48:22.482" level="INFO">${Project_name} = project942</msg>
+<status status="PASS" starttime="20230908 02:48:22.481" endtime="20230908 02:48:22.482"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${name_project_input_field}</arg>
+<arg>${Project_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:48:22.484" level="INFO">Typing text 'project942' into text field '//input[@class="add-project__name"]'.</msg>
+<status status="PASS" starttime="20230908 02:48:22.482" endtime="20230908 02:48:22.632"/>
+</kw>
+<msg timestamp="20230908 02:48:22.632" level="INFO">${Pro_name_from_list} = project942</msg>
+<status status="PASS" starttime="20230908 02:48:22.480" endtime="20230908 02:48:22.633"/>
+</kw>
+<kw name="Click on add Project to Submit Button" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Project_submit_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:48:22.636" level="INFO">Clicking element '//*[@id="root"]/div/main/section/div[1]/div[2]/div/button'.</msg>
+<status status="PASS" starttime="20230908 02:48:22.634" endtime="20230908 02:48:22.713"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:22.633" endtime="20230908 02:48:22.713"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:22.633" endtime="20230908 02:48:22.713"/>
+</kw>
+<kw name="Click on added project" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Added_Project_locator}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:48:22.715" level="INFO">Clicking element '(//div[@data-testid="project-action"])[1]'.</msg>
+<status status="PASS" starttime="20230908 02:48:22.714" endtime="20230908 02:48:23.055"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:22.714" endtime="20230908 02:48:23.056"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:22.713" endtime="20230908 02:48:23.056"/>
+</kw>
+<kw name="Get the project name from home page" library="Projects_Keywords">
+<var>${name_from_home}</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${name}</var>
+<arg>//h2[@data-testid="project-name"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:48:23.092" level="INFO">${name} = project942</msg>
+<status status="PASS" starttime="20230908 02:48:23.056" endtime="20230908 02:48:23.092"/>
+</kw>
+<msg timestamp="20230908 02:48:23.093" level="INFO">${name_from_home} = project942</msg>
+<status status="PASS" starttime="20230908 02:48:23.056" endtime="20230908 02:48:23.093"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Pro_name_from_list}</arg>
+<arg>${name_from_home}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20230908 02:48:23.093" endtime="20230908 02:48:23.093"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:48:25.108" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:48:23.093" endtime="20230908 02:48:25.109"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:22.405" endtime="20230908 02:48:25.109"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:48:27.118" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:48:25.111" endtime="20230908 02:48:27.118"/>
+</kw>
+<kw name="Click on Add Task text" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${tasks_text_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:48:27.126" level="INFO">Clicking element '//span[@class="add-task__text"]'.</msg>
+<status status="PASS" starttime="20230908 02:48:27.123" endtime="20230908 02:48:27.207"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:27.122" endtime="20230908 02:48:27.207"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:27.120" endtime="20230908 02:48:27.207"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>2</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:48:27.208" endtime="20230908 02:48:27.211"/>
+</kw>
+<kw name="Enter Task Name" library="Projects_Keywords">
+<kw name="Generate Random String" library="String">
+<var>${Tasks_name}</var>
+<arg>6</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230908 02:48:27.214" level="INFO">${Tasks_name} = UGYCue</msg>
+<status status="PASS" starttime="20230908 02:48:27.213" endtime="20230908 02:48:27.214"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${tasks_input_field}</arg>
+<arg>${Tasks_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:48:27.215" level="INFO">Typing text 'UGYCue' into text field '//input[@class="add-task__content"]'.</msg>
+<status status="PASS" starttime="20230908 02:48:27.214" endtime="20230908 02:48:27.365"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:27.212" endtime="20230908 02:48:27.365"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>2</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:48:27.366" endtime="20230908 02:48:27.368"/>
+</kw>
+<kw name="Click on date picker" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${date_picker_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:48:27.371" level="INFO">Clicking element '//span[@class="add-task__date"]'.</msg>
+<status status="PASS" starttime="20230908 02:48:27.370" endtime="20230908 02:48:27.467"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:27.369" endtime="20230908 02:48:27.467"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:27.369" endtime="20230908 02:48:27.467"/>
+</kw>
+<kw name="Click on Toworrow date" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${tomorrow_date}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:48:27.470" level="INFO">Clicking element '//div[@data-testid="task-date-tomorrow"]'.</msg>
+<status status="PASS" starttime="20230908 02:48:27.469" endtime="20230908 02:48:27.565"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:27.468" endtime="20230908 02:48:27.565"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:27.467" endtime="20230908 02:48:27.565"/>
+</kw>
+<kw name="Click on Add task button to Submit" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Submit_task_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:48:27.569" level="INFO">Clicking element '//button[@class="add-task__submit"]'.</msg>
+<status status="PASS" starttime="20230908 02:48:27.568" endtime="20230908 02:48:27.638"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:27.567" endtime="20230908 02:48:27.638"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:27.566" endtime="20230908 02:48:27.638"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:48:29.646" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:48:27.639" endtime="20230908 02:48:29.646"/>
+</kw>
+<kw name="Click on Nextweek Tab" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Nxt_week_tab}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:48:29.654" level="INFO">Clicking element '//div[@data-testid="next_7-action"]'.</msg>
+<status status="PASS" starttime="20230908 02:48:29.652" endtime="20230908 02:48:29.733"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:29.650" endtime="20230908 02:48:29.733"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:29.649" endtime="20230908 02:48:29.733"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>2</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:48:29.734" endtime="20230908 02:48:29.735"/>
+</kw>
+<kw name="Task should be exist" library="Projects_Keywords">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${task in list}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230908 02:48:30.034" level="INFO">Element '//*[@id="root"]/div/main/section/div[2]/ul/li/span' is displayed.</msg>
+<status status="PASS" starttime="20230908 02:48:29.737" endtime="20230908 02:48:30.034"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:29.737" endtime="20230908 02:48:30.034"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:48:32.042" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:48:30.035" endtime="20230908 02:48:32.042"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230908 02:48:32.044" endtime="20230908 02:48:36.102"/>
+</kw>
+<tag>Happy</tag>
+<tag>Project</tag>
+<status status="PASS" starttime="20230908 02:48:07.435" endtime="20230908 02:48:36.103"/>
+</test>
+<test id="s1-s1-t4" name="Create new project with new Task Next week" line="67">
+<kw name="Open_The_Browser" library="common">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${Website_URL}</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230908 02:48:36.106" level="INFO">Opening browser 'gc' to base url 'https://utasks-buggy.web.app/login'.</msg>
+<status status="PASS" starttime="20230908 02:48:36.106" endtime="20230908 02:49:03.805"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230908 02:49:03.806" endtime="20230908 02:49:04.104"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:49:04.105" endtime="20230908 02:49:04.109"/>
+</kw>
+<status status="PASS" starttime="20230908 02:48:36.105" endtime="20230908 02:49:04.109"/>
+</kw>
+<kw name="Successfull sign up and Login" library="Login_Keywords">
+<kw name="GO TO Sign Up" library="common">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://utasks-buggy.web.app/signup</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230908 02:49:04.217" level="INFO">Opening url 'https://utasks-buggy.web.app/signup'</msg>
+<status status="PASS" starttime="20230908 02:49:04.216" endtime="20230908 02:49:04.664"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:04.215" endtime="20230908 02:49:04.664"/>
+</kw>
+<kw name="Successfull Sigun Up" library="SignUp_Keyword">
+<var>${email}</var>
+<var>${pass}</var>
+<kw name="Generate Random String" library="String">
+<var>${Valid_Username}</var>
+<arg>5</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230908 02:49:04.667" level="INFO">${Valid_Username} = ZPpKj</msg>
+<status status="PASS" starttime="20230908 02:49:04.666" endtime="20230908 02:49:04.667"/>
+</kw>
+<kw name="Generate Random String" library="String">
+<var>${Valid_Email}</var>
+<arg>5</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230908 02:49:04.669" level="INFO">${Valid_Email} = JrZCU</msg>
+<status status="PASS" starttime="20230908 02:49:04.668" endtime="20230908 02:49:04.669"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Valid_Email}</var>
+<arg>${Valid_Email}@utasks.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230908 02:49:04.670" level="INFO">${Valid_Email} = JrZCU@utasks.com</msg>
+<status status="PASS" starttime="20230908 02:49:04.670" endtime="20230908 02:49:04.670"/>
+</kw>
+<kw name="Sign up" library="SignUp_Keyword">
+<arg>${Valid_Username}</arg>
+<arg>${Valid_Job_title}</arg>
+<arg>${Valid_Company_Name}</arg>
+<arg>${Valid_Email}</arg>
+<arg>${Valid_Pass}</arg>
+<arg>${Valid_confirm_password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Username_locator}</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:04.676" level="INFO">Typing text 'ZPpKj' into text field '(//input[@class="form-control"])[1]'.</msg>
+<status status="PASS" starttime="20230908 02:49:04.675" endtime="20230908 02:49:05.274"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Job_title_locator}</arg>
+<arg>${Job_title}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:05.275" level="INFO">Typing text 'Tester' into text field '(//input[@class="form-control"])[2]'.</msg>
+<status status="PASS" starttime="20230908 02:49:05.274" endtime="20230908 02:49:05.717"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Company_Name_locator}</arg>
+<arg>${Company_Name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:05.720" level="INFO">Typing text 'Company Test' into text field '(//input[@class="form-control"])[3]'.</msg>
+<status status="PASS" starttime="20230908 02:49:05.717" endtime="20230908 02:49:06.470"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Email_locator}</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:06.473" level="INFO">Typing text 'JrZCU@utasks.com' into text field '(//input[@class="form-control"])[4]'.</msg>
+<status status="PASS" starttime="20230908 02:49:06.471" endtime="20230908 02:49:06.912"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Password_locator}</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:06.915" level="INFO">Typing text '123456' into text field '(//input[@class="form-control"])[5]'.</msg>
+<status status="PASS" starttime="20230908 02:49:06.913" endtime="20230908 02:49:07.253"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Confirm_Password_locator}</arg>
+<arg>${Confirm_Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:07.255" level="INFO">Typing text '123456' into text field '(//input[@class="form-control"])[6]'.</msg>
+<status status="PASS" starttime="20230908 02:49:07.254" endtime="20230908 02:49:07.671"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:04.671" endtime="20230908 02:49:07.671"/>
+</kw>
+<kw name="Click on" library="common">
+<arg>${SignUp Button}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:07.675" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20230908 02:49:07.673" endtime="20230908 02:49:07.959"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:07.672" endtime="20230908 02:49:07.959"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Log In</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230908 02:49:08.034" level="INFO">Current page contains text 'Log In'.</msg>
+<status status="PASS" starttime="20230908 02:49:07.959" endtime="20230908 02:49:08.035"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:49:10.041" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:49:08.035" endtime="20230908 02:49:10.041"/>
+</kw>
+<msg timestamp="20230908 02:49:10.042" level="INFO">${email} = JrZCU@utasks.com</msg>
+<msg timestamp="20230908 02:49:10.042" level="INFO">${pass} = 123456</msg>
+<status status="PASS" starttime="20230908 02:49:04.665" endtime="20230908 02:49:10.042"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>3</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:49:10.043" endtime="20230908 02:49:10.046"/>
+</kw>
+<kw name="Login" library="Login_Keywords">
+<arg>${email}</arg>
+<arg>${pass}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Email_xpath}</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:10.049" level="INFO">Typing text 'JrZCU@utasks.com' into text field '//*[@id="email"]/input'.</msg>
+<status status="PASS" starttime="20230908 02:49:10.048" endtime="20230908 02:49:10.422"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Password_xpath}</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:10.424" level="INFO">Typing text '123456' into text field '//*[@id="password"]/input'.</msg>
+<status status="PASS" starttime="20230908 02:49:10.423" endtime="20230908 02:49:10.698"/>
+</kw>
+<kw name="Click on" library="common">
+<arg>${Login_btn_xpath}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:10.702" level="INFO">Clicking element '//*[@id="root"]/div/div/div/div[1]/div/form/button'.</msg>
+<status status="PASS" starttime="20230908 02:49:10.699" endtime="20230908 02:49:10.833"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:10.698" endtime="20230908 02:49:10.833"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:10.047" endtime="20230908 02:49:10.834"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:49:12.837" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:49:10.834" endtime="20230908 02:49:12.837"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${Home_Page_assertion}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230908 02:49:12.995" level="INFO">Element '//div[@data-testid="inbox-action"]' is displayed.</msg>
+<status status="PASS" starttime="20230908 02:49:12.837" endtime="20230908 02:49:12.995"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:04.214" endtime="20230908 02:49:12.995"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>2</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:49:13.015" endtime="20230908 02:49:13.037"/>
+</kw>
+<kw name="Successfull Add new project" library="Projects_Keywords">
+<kw name="Click on Add project text" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Add_project_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:13.063" level="INFO">Clicking element '//*[@id="root"]/div/main/section/div[1]/div[2]/span[2]'.</msg>
+<status status="PASS" starttime="20230908 02:49:13.061" endtime="20230908 02:49:13.441"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:13.061" endtime="20230908 02:49:13.442"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:13.060" endtime="20230908 02:49:13.442"/>
+</kw>
+<kw name="Add name to the project" library="Projects_Keywords">
+<var>${Pro_name_from_list}</var>
+<kw name="Generate Random String" library="String">
+<var>${Random_num}</var>
+<arg>3</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230908 02:49:13.444" level="INFO">${Random_num} = 724</msg>
+<status status="PASS" starttime="20230908 02:49:13.443" endtime="20230908 02:49:13.444"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Project_name}</var>
+<arg>${Project}${Random_num}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230908 02:49:13.445" level="INFO">${Project_name} = project724</msg>
+<status status="PASS" starttime="20230908 02:49:13.444" endtime="20230908 02:49:13.445"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${name_project_input_field}</arg>
+<arg>${Project_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:13.447" level="INFO">Typing text 'project724' into text field '//input[@class="add-project__name"]'.</msg>
+<status status="PASS" starttime="20230908 02:49:13.445" endtime="20230908 02:49:13.969"/>
+</kw>
+<msg timestamp="20230908 02:49:13.970" level="INFO">${Pro_name_from_list} = project724</msg>
+<status status="PASS" starttime="20230908 02:49:13.442" endtime="20230908 02:49:13.970"/>
+</kw>
+<kw name="Click on add Project to Submit Button" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Project_submit_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:13.974" level="INFO">Clicking element '//*[@id="root"]/div/main/section/div[1]/div[2]/div/button'.</msg>
+<status status="PASS" starttime="20230908 02:49:13.972" endtime="20230908 02:49:14.236"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:13.971" endtime="20230908 02:49:14.236"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:13.970" endtime="20230908 02:49:14.236"/>
+</kw>
+<kw name="Click on added project" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Added_Project_locator}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:14.240" level="INFO">Clicking element '(//div[@data-testid="project-action"])[1]'.</msg>
+<status status="PASS" starttime="20230908 02:49:14.238" endtime="20230908 02:49:14.600"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:14.237" endtime="20230908 02:49:14.600"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:14.236" endtime="20230908 02:49:14.600"/>
+</kw>
+<kw name="Get the project name from home page" library="Projects_Keywords">
+<var>${name_from_home}</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${name}</var>
+<arg>//h2[@data-testid="project-name"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:14.645" level="INFO">${name} = project724</msg>
+<status status="PASS" starttime="20230908 02:49:14.601" endtime="20230908 02:49:14.645"/>
+</kw>
+<msg timestamp="20230908 02:49:14.645" level="INFO">${name_from_home} = project724</msg>
+<status status="PASS" starttime="20230908 02:49:14.601" endtime="20230908 02:49:14.645"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Pro_name_from_list}</arg>
+<arg>${name_from_home}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20230908 02:49:14.646" endtime="20230908 02:49:14.646"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:49:16.659" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:49:14.647" endtime="20230908 02:49:16.659"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:13.059" endtime="20230908 02:49:16.659"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:49:18.677" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:49:16.661" endtime="20230908 02:49:18.677"/>
+</kw>
+<kw name="Click on Add Task text" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${tasks_text_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:18.680" level="INFO">Clicking element '//span[@class="add-task__text"]'.</msg>
+<status status="PASS" starttime="20230908 02:49:18.679" endtime="20230908 02:49:18.757"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:18.678" endtime="20230908 02:49:18.757"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:18.678" endtime="20230908 02:49:18.757"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>2</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:49:18.759" endtime="20230908 02:49:18.762"/>
+</kw>
+<kw name="Enter Task Name" library="Projects_Keywords">
+<kw name="Generate Random String" library="String">
+<var>${Tasks_name}</var>
+<arg>6</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230908 02:49:18.764" level="INFO">${Tasks_name} = mxpyQe</msg>
+<status status="PASS" starttime="20230908 02:49:18.763" endtime="20230908 02:49:18.764"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${tasks_input_field}</arg>
+<arg>${Tasks_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:18.765" level="INFO">Typing text 'mxpyQe' into text field '//input[@class="add-task__content"]'.</msg>
+<status status="PASS" starttime="20230908 02:49:18.764" endtime="20230908 02:49:18.939"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:18.762" endtime="20230908 02:49:18.939"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>2</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:49:18.941" endtime="20230908 02:49:18.945"/>
+</kw>
+<kw name="Click on date picker" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${date_picker_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:18.948" level="INFO">Clicking element '//span[@class="add-task__date"]'.</msg>
+<status status="PASS" starttime="20230908 02:49:18.947" endtime="20230908 02:49:19.036"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:18.946" endtime="20230908 02:49:19.036"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:18.946" endtime="20230908 02:49:19.036"/>
+</kw>
+<kw name="Click on Next week date" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${nxt_week_date}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:19.041" level="INFO">Clicking element '//div[@data-testid="task-date-next-week"]'.</msg>
+<status status="PASS" starttime="20230908 02:49:19.040" endtime="20230908 02:49:19.193"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:19.039" endtime="20230908 02:49:19.193"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:19.039" endtime="20230908 02:49:19.193"/>
+</kw>
+<kw name="Click on Add task button to Submit" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Submit_task_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:19.208" level="INFO">Clicking element '//button[@class="add-task__submit"]'.</msg>
+<status status="PASS" starttime="20230908 02:49:19.207" endtime="20230908 02:49:19.287"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:19.206" endtime="20230908 02:49:19.287"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:19.206" endtime="20230908 02:49:19.287"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:49:21.290" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:49:19.288" endtime="20230908 02:49:21.290"/>
+</kw>
+<kw name="Click on Nextweek Tab" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Nxt_week_tab}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:21.295" level="INFO">Clicking element '//div[@data-testid="next_7-action"]'.</msg>
+<status status="PASS" starttime="20230908 02:49:21.293" endtime="20230908 02:49:21.368"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:21.293" endtime="20230908 02:49:21.368"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:21.292" endtime="20230908 02:49:21.368"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>2</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:49:21.370" endtime="20230908 02:49:21.373"/>
+</kw>
+<kw name="Task should be exist" library="Projects_Keywords">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${task in list}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230908 02:49:21.684" level="INFO">Element '//*[@id="root"]/div/main/section/div[2]/ul/li/span' is displayed.</msg>
+<status status="PASS" starttime="20230908 02:49:21.374" endtime="20230908 02:49:21.684"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:21.374" endtime="20230908 02:49:21.685"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:49:23.688" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:49:21.685" endtime="20230908 02:49:23.688"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230908 02:49:23.689" endtime="20230908 02:49:28.179"/>
+</kw>
+<tag>Happy</tag>
+<tag>Project</tag>
+<status status="PASS" starttime="20230908 02:48:36.104" endtime="20230908 02:49:28.180"/>
+</test>
+<test id="s1-s1-t5" name="Verify the cancel button in Add task is working correctly" line="87">
+<kw name="Open_The_Browser" library="common">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${Website_URL}</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230908 02:49:28.185" level="INFO">Opening browser 'gc' to base url 'https://utasks-buggy.web.app/login'.</msg>
+<status status="PASS" starttime="20230908 02:49:28.183" endtime="20230908 02:49:39.339"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230908 02:49:39.339" endtime="20230908 02:49:39.490"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:49:39.491" endtime="20230908 02:49:39.494"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:28.183" endtime="20230908 02:49:39.494"/>
+</kw>
+<kw name="Successfull sign up and Login" library="Login_Keywords">
+<kw name="GO TO Sign Up" library="common">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://utasks-buggy.web.app/signup</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230908 02:49:39.496" level="INFO">Opening url 'https://utasks-buggy.web.app/signup'</msg>
+<status status="PASS" starttime="20230908 02:49:39.496" endtime="20230908 02:49:39.721"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:39.495" endtime="20230908 02:49:39.722"/>
+</kw>
+<kw name="Successfull Sigun Up" library="SignUp_Keyword">
+<var>${email}</var>
+<var>${pass}</var>
+<kw name="Generate Random String" library="String">
+<var>${Valid_Username}</var>
+<arg>5</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230908 02:49:39.725" level="INFO">${Valid_Username} = YDbEF</msg>
+<status status="PASS" starttime="20230908 02:49:39.724" endtime="20230908 02:49:39.725"/>
+</kw>
+<kw name="Generate Random String" library="String">
+<var>${Valid_Email}</var>
+<arg>5</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230908 02:49:39.726" level="INFO">${Valid_Email} = MvHRT</msg>
+<status status="PASS" starttime="20230908 02:49:39.725" endtime="20230908 02:49:39.726"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Valid_Email}</var>
+<arg>${Valid_Email}@utasks.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230908 02:49:39.727" level="INFO">${Valid_Email} = MvHRT@utasks.com</msg>
+<status status="PASS" starttime="20230908 02:49:39.726" endtime="20230908 02:49:39.727"/>
+</kw>
+<kw name="Sign up" library="SignUp_Keyword">
+<arg>${Valid_Username}</arg>
+<arg>${Valid_Job_title}</arg>
+<arg>${Valid_Company_Name}</arg>
+<arg>${Valid_Email}</arg>
+<arg>${Valid_Pass}</arg>
+<arg>${Valid_confirm_password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Username_locator}</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:39.732" level="INFO">Typing text 'YDbEF' into text field '(//input[@class="form-control"])[1]'.</msg>
+<status status="PASS" starttime="20230908 02:49:39.729" endtime="20230908 02:49:40.040"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Job_title_locator}</arg>
+<arg>${Job_title}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:40.041" level="INFO">Typing text 'Tester' into text field '(//input[@class="form-control"])[2]'.</msg>
+<status status="PASS" starttime="20230908 02:49:40.040" endtime="20230908 02:49:40.231"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Company_Name_locator}</arg>
+<arg>${Company_Name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:40.233" level="INFO">Typing text 'Company Test' into text field '(//input[@class="form-control"])[3]'.</msg>
+<status status="PASS" starttime="20230908 02:49:40.232" endtime="20230908 02:49:40.465"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Email_locator}</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:40.467" level="INFO">Typing text 'MvHRT@utasks.com' into text field '(//input[@class="form-control"])[4]'.</msg>
+<status status="PASS" starttime="20230908 02:49:40.466" endtime="20230908 02:49:40.673"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Password_locator}</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:40.675" level="INFO">Typing text '123456' into text field '(//input[@class="form-control"])[5]'.</msg>
+<status status="PASS" starttime="20230908 02:49:40.673" endtime="20230908 02:49:40.850"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Confirm_Password_locator}</arg>
+<arg>${Confirm_Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:40.853" level="INFO">Typing text '123456' into text field '(//input[@class="form-control"])[6]'.</msg>
+<status status="PASS" starttime="20230908 02:49:40.851" endtime="20230908 02:49:41.043"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:39.727" endtime="20230908 02:49:41.043"/>
+</kw>
+<kw name="Click on" library="common">
+<arg>${SignUp Button}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:41.046" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20230908 02:49:41.044" endtime="20230908 02:49:41.157"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:41.043" endtime="20230908 02:49:41.157"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Log In</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230908 02:49:41.197" level="INFO">Current page contains text 'Log In'.</msg>
+<status status="PASS" starttime="20230908 02:49:41.158" endtime="20230908 02:49:41.197"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:49:43.201" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:49:41.197" endtime="20230908 02:49:43.202"/>
+</kw>
+<msg timestamp="20230908 02:49:43.203" level="INFO">${email} = MvHRT@utasks.com</msg>
+<msg timestamp="20230908 02:49:43.203" level="INFO">${pass} = 123456</msg>
+<status status="PASS" starttime="20230908 02:49:39.723" endtime="20230908 02:49:43.203"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>3</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:49:43.203" endtime="20230908 02:49:43.208"/>
+</kw>
+<kw name="Login" library="Login_Keywords">
+<arg>${email}</arg>
+<arg>${pass}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Email_xpath}</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:43.211" level="INFO">Typing text 'MvHRT@utasks.com' into text field '//*[@id="email"]/input'.</msg>
+<status status="PASS" starttime="20230908 02:49:43.210" endtime="20230908 02:49:43.453"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Password_xpath}</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:43.455" level="INFO">Typing text '123456' into text field '//*[@id="password"]/input'.</msg>
+<status status="PASS" starttime="20230908 02:49:43.453" endtime="20230908 02:49:43.632"/>
+</kw>
+<kw name="Click on" library="common">
+<arg>${Login_btn_xpath}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:43.635" level="INFO">Clicking element '//*[@id="root"]/div/div/div/div[1]/div/form/button'.</msg>
+<status status="PASS" starttime="20230908 02:49:43.634" endtime="20230908 02:49:43.744"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:43.633" endtime="20230908 02:49:43.745"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:43.209" endtime="20230908 02:49:43.745"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:49:45.758" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:49:43.745" endtime="20230908 02:49:45.758"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${Home_Page_assertion}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230908 02:49:45.790" level="INFO">Element '//div[@data-testid="inbox-action"]' is displayed.</msg>
+<status status="PASS" starttime="20230908 02:49:45.758" endtime="20230908 02:49:45.790"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:39.495" endtime="20230908 02:49:45.790"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>2</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:49:45.791" endtime="20230908 02:49:45.793"/>
+</kw>
+<kw name="Successfull Add new project" library="Projects_Keywords">
+<kw name="Click on Add project text" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Add_project_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:45.795" level="INFO">Clicking element '//*[@id="root"]/div/main/section/div[1]/div[2]/span[2]'.</msg>
+<status status="PASS" starttime="20230908 02:49:45.794" endtime="20230908 02:49:45.855"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:45.794" endtime="20230908 02:49:45.855"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:45.794" endtime="20230908 02:49:45.856"/>
+</kw>
+<kw name="Add name to the project" library="Projects_Keywords">
+<var>${Pro_name_from_list}</var>
+<kw name="Generate Random String" library="String">
+<var>${Random_num}</var>
+<arg>3</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230908 02:49:45.857" level="INFO">${Random_num} = 186</msg>
+<status status="PASS" starttime="20230908 02:49:45.856" endtime="20230908 02:49:45.857"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Project_name}</var>
+<arg>${Project}${Random_num}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230908 02:49:45.858" level="INFO">${Project_name} = project186</msg>
+<status status="PASS" starttime="20230908 02:49:45.857" endtime="20230908 02:49:45.858"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${name_project_input_field}</arg>
+<arg>${Project_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:45.860" level="INFO">Typing text 'project186' into text field '//input[@class="add-project__name"]'.</msg>
+<status status="PASS" starttime="20230908 02:49:45.858" endtime="20230908 02:49:46.019"/>
+</kw>
+<msg timestamp="20230908 02:49:46.019" level="INFO">${Pro_name_from_list} = project186</msg>
+<status status="PASS" starttime="20230908 02:49:45.856" endtime="20230908 02:49:46.019"/>
+</kw>
+<kw name="Click on add Project to Submit Button" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Project_submit_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:46.023" level="INFO">Clicking element '//*[@id="root"]/div/main/section/div[1]/div[2]/div/button'.</msg>
+<status status="PASS" starttime="20230908 02:49:46.021" endtime="20230908 02:49:46.117"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:46.020" endtime="20230908 02:49:46.117"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:46.020" endtime="20230908 02:49:46.117"/>
+</kw>
+<kw name="Click on added project" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Added_Project_locator}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:46.120" level="INFO">Clicking element '(//div[@data-testid="project-action"])[1]'.</msg>
+<status status="PASS" starttime="20230908 02:49:46.119" endtime="20230908 02:49:46.455"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:46.118" endtime="20230908 02:49:46.455"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:46.117" endtime="20230908 02:49:46.455"/>
+</kw>
+<kw name="Get the project name from home page" library="Projects_Keywords">
+<var>${name_from_home}</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${name}</var>
+<arg>//h2[@data-testid="project-name"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:46.490" level="INFO">${name} = project186</msg>
+<status status="PASS" starttime="20230908 02:49:46.456" endtime="20230908 02:49:46.490"/>
+</kw>
+<msg timestamp="20230908 02:49:46.490" level="INFO">${name_from_home} = project186</msg>
+<status status="PASS" starttime="20230908 02:49:46.455" endtime="20230908 02:49:46.490"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Pro_name_from_list}</arg>
+<arg>${name_from_home}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20230908 02:49:46.491" endtime="20230908 02:49:46.491"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:49:48.496" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:49:46.492" endtime="20230908 02:49:48.496"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:45.793" endtime="20230908 02:49:48.496"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:49:50.508" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:49:48.497" endtime="20230908 02:49:50.508"/>
+</kw>
+<kw name="Click on Add Task text" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${tasks_text_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:50.511" level="INFO">Clicking element '//span[@class="add-task__text"]'.</msg>
+<status status="PASS" starttime="20230908 02:49:50.510" endtime="20230908 02:49:50.578"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:50.509" endtime="20230908 02:49:50.578"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:50.509" endtime="20230908 02:49:50.579"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>2</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:49:50.580" endtime="20230908 02:49:50.582"/>
+</kw>
+<kw name="Enter Task Name" library="Projects_Keywords">
+<kw name="Generate Random String" library="String">
+<var>${Tasks_name}</var>
+<arg>6</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230908 02:49:50.584" level="INFO">${Tasks_name} = QWQLqr</msg>
+<status status="PASS" starttime="20230908 02:49:50.583" endtime="20230908 02:49:50.584"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${tasks_input_field}</arg>
+<arg>${Tasks_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:50.586" level="INFO">Typing text 'QWQLqr' into text field '//input[@class="add-task__content"]'.</msg>
+<status status="PASS" starttime="20230908 02:49:50.584" endtime="20230908 02:49:50.734"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:50.583" endtime="20230908 02:49:50.734"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>2</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:49:50.736" endtime="20230908 02:49:50.739"/>
+</kw>
+<kw name="Click on date picker" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${date_picker_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:50.744" level="INFO">Clicking element '//span[@class="add-task__date"]'.</msg>
+<status status="PASS" starttime="20230908 02:49:50.742" endtime="20230908 02:49:50.823"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:50.741" endtime="20230908 02:49:50.823"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:50.740" endtime="20230908 02:49:50.824"/>
+</kw>
+<kw name="Click on Next week date" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${nxt_week_date}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:50.828" level="INFO">Clicking element '//div[@data-testid="task-date-next-week"]'.</msg>
+<status status="PASS" starttime="20230908 02:49:50.826" endtime="20230908 02:49:50.916"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:50.825" endtime="20230908 02:49:50.916"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:50.825" endtime="20230908 02:49:50.917"/>
+</kw>
+<kw name="Click on Cancel task button" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Cancel_task_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:49:50.920" level="INFO">Clicking element '//span[@class="add-task__cancel"]'.</msg>
+<status status="PASS" starttime="20230908 02:49:50.919" endtime="20230908 02:49:50.996"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:50.918" endtime="20230908 02:49:50.996"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:50.917" endtime="20230908 02:49:50.997"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:49:53.000" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:49:50.997" endtime="20230908 02:49:53.000"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230908 02:49:53.001" endtime="20230908 02:49:58.439"/>
+</kw>
+<tag>Happy</tag>
+<tag>Project</tag>
+<status status="PASS" starttime="20230908 02:49:28.182" endtime="20230908 02:49:58.440"/>
+</test>
+<test id="s1-s1-t6" name="Add Quick Task without adding any Project" line="103">
+<kw name="Open_The_Browser" library="common">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${Website_URL}</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230908 02:49:58.443" level="INFO">Opening browser 'gc' to base url 'https://utasks-buggy.web.app/login'.</msg>
+<status status="PASS" starttime="20230908 02:49:58.443" endtime="20230908 02:50:07.475"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230908 02:50:07.475" endtime="20230908 02:50:07.608"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:50:07.608" endtime="20230908 02:50:07.614"/>
+</kw>
+<status status="PASS" starttime="20230908 02:49:58.442" endtime="20230908 02:50:07.615"/>
+</kw>
+<kw name="Successfull sign up and Login" library="Login_Keywords">
+<kw name="GO TO Sign Up" library="common">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://utasks-buggy.web.app/signup</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230908 02:50:07.618" level="INFO">Opening url 'https://utasks-buggy.web.app/signup'</msg>
+<status status="PASS" starttime="20230908 02:50:07.618" endtime="20230908 02:50:07.863"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:07.617" endtime="20230908 02:50:07.863"/>
+</kw>
+<kw name="Successfull Sigun Up" library="SignUp_Keyword">
+<var>${email}</var>
+<var>${pass}</var>
+<kw name="Generate Random String" library="String">
+<var>${Valid_Username}</var>
+<arg>5</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230908 02:50:07.866" level="INFO">${Valid_Username} = BrzaZ</msg>
+<status status="PASS" starttime="20230908 02:50:07.865" endtime="20230908 02:50:07.866"/>
+</kw>
+<kw name="Generate Random String" library="String">
+<var>${Valid_Email}</var>
+<arg>5</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230908 02:50:07.869" level="INFO">${Valid_Email} = FcXeD</msg>
+<status status="PASS" starttime="20230908 02:50:07.867" endtime="20230908 02:50:07.869"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Valid_Email}</var>
+<arg>${Valid_Email}@utasks.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230908 02:50:07.870" level="INFO">${Valid_Email} = FcXeD@utasks.com</msg>
+<status status="PASS" starttime="20230908 02:50:07.870" endtime="20230908 02:50:07.870"/>
+</kw>
+<kw name="Sign up" library="SignUp_Keyword">
+<arg>${Valid_Username}</arg>
+<arg>${Valid_Job_title}</arg>
+<arg>${Valid_Company_Name}</arg>
+<arg>${Valid_Email}</arg>
+<arg>${Valid_Pass}</arg>
+<arg>${Valid_confirm_password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Username_locator}</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:07.874" level="INFO">Typing text 'BrzaZ' into text field '(//input[@class="form-control"])[1]'.</msg>
+<status status="PASS" starttime="20230908 02:50:07.872" endtime="20230908 02:50:08.156"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Job_title_locator}</arg>
+<arg>${Job_title}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:08.158" level="INFO">Typing text 'Tester' into text field '(//input[@class="form-control"])[2]'.</msg>
+<status status="PASS" starttime="20230908 02:50:08.156" endtime="20230908 02:50:08.348"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Company_Name_locator}</arg>
+<arg>${Company_Name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:08.350" level="INFO">Typing text 'Company Test' into text field '(//input[@class="form-control"])[3]'.</msg>
+<status status="PASS" starttime="20230908 02:50:08.348" endtime="20230908 02:50:08.575"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Email_locator}</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:08.577" level="INFO">Typing text 'FcXeD@utasks.com' into text field '(//input[@class="form-control"])[4]'.</msg>
+<status status="PASS" starttime="20230908 02:50:08.575" endtime="20230908 02:50:08.774"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Password_locator}</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:08.776" level="INFO">Typing text '123456' into text field '(//input[@class="form-control"])[5]'.</msg>
+<status status="PASS" starttime="20230908 02:50:08.774" endtime="20230908 02:50:08.950"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Confirm_Password_locator}</arg>
+<arg>${Confirm_Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:08.952" level="INFO">Typing text '123456' into text field '(//input[@class="form-control"])[6]'.</msg>
+<status status="PASS" starttime="20230908 02:50:08.950" endtime="20230908 02:50:09.138"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:07.871" endtime="20230908 02:50:09.138"/>
+</kw>
+<kw name="Click on" library="common">
+<arg>${SignUp Button}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:09.141" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20230908 02:50:09.139" endtime="20230908 02:50:09.252"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:09.139" endtime="20230908 02:50:09.252"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Log In</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230908 02:50:09.287" level="INFO">Current page contains text 'Log In'.</msg>
+<status status="PASS" starttime="20230908 02:50:09.252" endtime="20230908 02:50:09.288"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:50:11.297" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:50:09.288" endtime="20230908 02:50:11.297"/>
+</kw>
+<msg timestamp="20230908 02:50:11.298" level="INFO">${email} = FcXeD@utasks.com</msg>
+<msg timestamp="20230908 02:50:11.298" level="INFO">${pass} = 123456</msg>
+<status status="PASS" starttime="20230908 02:50:07.864" endtime="20230908 02:50:11.298"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>3</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:50:11.298" endtime="20230908 02:50:11.301"/>
+</kw>
+<kw name="Login" library="Login_Keywords">
+<arg>${email}</arg>
+<arg>${pass}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Email_xpath}</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:11.304" level="INFO">Typing text 'FcXeD@utasks.com' into text field '//*[@id="email"]/input'.</msg>
+<status status="PASS" starttime="20230908 02:50:11.302" endtime="20230908 02:50:11.520"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Password_xpath}</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:11.522" level="INFO">Typing text '123456' into text field '//*[@id="password"]/input'.</msg>
+<status status="PASS" starttime="20230908 02:50:11.521" endtime="20230908 02:50:11.704"/>
+</kw>
+<kw name="Click on" library="common">
+<arg>${Login_btn_xpath}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:11.707" level="INFO">Clicking element '//*[@id="root"]/div/div/div/div[1]/div/form/button'.</msg>
+<status status="PASS" starttime="20230908 02:50:11.706" endtime="20230908 02:50:11.841"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:11.705" endtime="20230908 02:50:11.841"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:11.301" endtime="20230908 02:50:11.841"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:50:13.853" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:50:11.842" endtime="20230908 02:50:13.853"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${Home_Page_assertion}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230908 02:50:13.884" level="INFO">Element '//div[@data-testid="inbox-action"]' is displayed.</msg>
+<status status="PASS" starttime="20230908 02:50:13.853" endtime="20230908 02:50:13.884"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:07.616" endtime="20230908 02:50:13.884"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>2</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:50:13.885" endtime="20230908 02:50:13.887"/>
+</kw>
+<kw name="Click on Add Quick task" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Quick_task_button}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:13.889" level="INFO">Clicking element '//button[@data-testid="quick-add-task-action"]'.</msg>
+<status status="PASS" starttime="20230908 02:50:13.888" endtime="20230908 02:50:13.956"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:13.888" endtime="20230908 02:50:13.956"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:13.887" endtime="20230908 02:50:13.956"/>
+</kw>
+<kw name="Enter the task content" library="Projects_Keywords">
+<kw name="Generate Random String" library="String">
+<var>${Tasks_name}</var>
+<arg>6</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230908 02:50:13.957" level="INFO">${Tasks_name} = PfLthy</msg>
+<status status="PASS" starttime="20230908 02:50:13.957" endtime="20230908 02:50:13.958"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${tasks_input_field}</arg>
+<arg>${Tasks_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:13.959" level="INFO">Typing text 'PfLthy' into text field '//input[@class="add-task__content"]'.</msg>
+<status status="PASS" starttime="20230908 02:50:13.958" endtime="20230908 02:50:14.120"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:13.957" endtime="20230908 02:50:14.120"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>2</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:50:14.121" endtime="20230908 02:50:14.124"/>
+</kw>
+<kw name="Click on date picker" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${date_picker_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:14.128" level="INFO">Clicking element '//span[@class="add-task__date"]'.</msg>
+<status status="PASS" starttime="20230908 02:50:14.127" endtime="20230908 02:50:14.212"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:14.126" endtime="20230908 02:50:14.213"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:14.125" endtime="20230908 02:50:14.213"/>
+</kw>
+<kw name="Click on Today date" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${today_date}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:14.216" level="INFO">Clicking element '//div[@data-testid="task-date-today"]'.</msg>
+<status status="PASS" starttime="20230908 02:50:14.215" endtime="20230908 02:50:14.317"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:14.214" endtime="20230908 02:50:14.317"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:14.213" endtime="20230908 02:50:14.317"/>
+</kw>
+<kw name="Click on Add task button to Submit" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Submit_task_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:14.332" level="INFO">Clicking element '//button[@class="add-task__submit"]'.</msg>
+<status status="PASS" starttime="20230908 02:50:14.330" endtime="20230908 02:50:14.433"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:14.329" endtime="20230908 02:50:14.434"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:14.328" endtime="20230908 02:50:14.434"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:50:16.449" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:50:14.436" endtime="20230908 02:50:16.449"/>
+</kw>
+<kw name="Click on Today Tab" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Today_tab}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:16.451" level="INFO">Clicking element '//div[@data-testid="today-action"]'.</msg>
+<status status="PASS" starttime="20230908 02:50:16.450" endtime="20230908 02:50:16.519"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:16.450" endtime="20230908 02:50:16.519"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:16.449" endtime="20230908 02:50:16.519"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>2</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:50:16.520" endtime="20230908 02:50:16.521"/>
+</kw>
+<kw name="Task should be exist" library="Projects_Keywords">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${task in list}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230908 02:50:16.804" level="INFO">Element '//*[@id="root"]/div/main/section/div[2]/ul/li/span' is displayed.</msg>
+<status status="PASS" starttime="20230908 02:50:16.522" endtime="20230908 02:50:16.804"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:16.522" endtime="20230908 02:50:16.804"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:50:18.813" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:50:16.805" endtime="20230908 02:50:18.813"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230908 02:50:18.813" endtime="20230908 02:50:22.178"/>
+</kw>
+<tag>Happy</tag>
+<tag>Project</tag>
+<status status="PASS" starttime="20230908 02:49:58.442" endtime="20230908 02:50:22.179"/>
+</test>
+<test id="s1-s1-t7" name="Add a task in a second project" line="121">
+<kw name="Open_The_Browser" library="common">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${Website_URL}</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230908 02:50:22.184" level="INFO">Opening browser 'gc' to base url 'https://utasks-buggy.web.app/login'.</msg>
+<status status="PASS" starttime="20230908 02:50:22.182" endtime="20230908 02:50:32.226"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230908 02:50:32.226" endtime="20230908 02:50:32.374"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:50:32.375" endtime="20230908 02:50:32.379"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:22.182" endtime="20230908 02:50:32.379"/>
+</kw>
+<kw name="Successfull sign up and Login" library="Login_Keywords">
+<kw name="GO TO Sign Up" library="common">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://utasks-buggy.web.app/signup</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230908 02:50:32.382" level="INFO">Opening url 'https://utasks-buggy.web.app/signup'</msg>
+<status status="PASS" starttime="20230908 02:50:32.382" endtime="20230908 02:50:32.583"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:32.381" endtime="20230908 02:50:32.583"/>
+</kw>
+<kw name="Successfull Sigun Up" library="SignUp_Keyword">
+<var>${email}</var>
+<var>${pass}</var>
+<kw name="Generate Random String" library="String">
+<var>${Valid_Username}</var>
+<arg>5</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230908 02:50:32.586" level="INFO">${Valid_Username} = WWPTJ</msg>
+<status status="PASS" starttime="20230908 02:50:32.585" endtime="20230908 02:50:32.586"/>
+</kw>
+<kw name="Generate Random String" library="String">
+<var>${Valid_Email}</var>
+<arg>5</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230908 02:50:32.588" level="INFO">${Valid_Email} = kztRN</msg>
+<status status="PASS" starttime="20230908 02:50:32.587" endtime="20230908 02:50:32.588"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Valid_Email}</var>
+<arg>${Valid_Email}@utasks.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230908 02:50:32.590" level="INFO">${Valid_Email} = kztRN@utasks.com</msg>
+<status status="PASS" starttime="20230908 02:50:32.588" endtime="20230908 02:50:32.590"/>
+</kw>
+<kw name="Sign up" library="SignUp_Keyword">
+<arg>${Valid_Username}</arg>
+<arg>${Valid_Job_title}</arg>
+<arg>${Valid_Company_Name}</arg>
+<arg>${Valid_Email}</arg>
+<arg>${Valid_Pass}</arg>
+<arg>${Valid_confirm_password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Username_locator}</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:32.595" level="INFO">Typing text 'WWPTJ' into text field '(//input[@class="form-control"])[1]'.</msg>
+<status status="PASS" starttime="20230908 02:50:32.594" endtime="20230908 02:50:32.918"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Job_title_locator}</arg>
+<arg>${Job_title}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:32.921" level="INFO">Typing text 'Tester' into text field '(//input[@class="form-control"])[2]'.</msg>
+<status status="PASS" starttime="20230908 02:50:32.919" endtime="20230908 02:50:33.098"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Company_Name_locator}</arg>
+<arg>${Company_Name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:33.100" level="INFO">Typing text 'Company Test' into text field '(//input[@class="form-control"])[3]'.</msg>
+<status status="PASS" starttime="20230908 02:50:33.098" endtime="20230908 02:50:33.367"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Email_locator}</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:33.369" level="INFO">Typing text 'kztRN@utasks.com' into text field '(//input[@class="form-control"])[4]'.</msg>
+<status status="PASS" starttime="20230908 02:50:33.368" endtime="20230908 02:50:33.611"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Password_locator}</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:33.613" level="INFO">Typing text '123456' into text field '(//input[@class="form-control"])[5]'.</msg>
+<status status="PASS" starttime="20230908 02:50:33.611" endtime="20230908 02:50:33.812"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Confirm_Password_locator}</arg>
+<arg>${Confirm_Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:33.814" level="INFO">Typing text '123456' into text field '(//input[@class="form-control"])[6]'.</msg>
+<status status="PASS" starttime="20230908 02:50:33.812" endtime="20230908 02:50:33.996"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:32.590" endtime="20230908 02:50:33.997"/>
+</kw>
+<kw name="Click on" library="common">
+<arg>${SignUp Button}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:33.999" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20230908 02:50:33.998" endtime="20230908 02:50:34.116"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:33.997" endtime="20230908 02:50:34.116"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Log In</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230908 02:50:34.166" level="INFO">Current page contains text 'Log In'.</msg>
+<status status="PASS" starttime="20230908 02:50:34.117" endtime="20230908 02:50:34.166"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:50:36.180" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:50:34.167" endtime="20230908 02:50:36.180"/>
+</kw>
+<msg timestamp="20230908 02:50:36.180" level="INFO">${email} = kztRN@utasks.com</msg>
+<msg timestamp="20230908 02:50:36.180" level="INFO">${pass} = 123456</msg>
+<status status="PASS" starttime="20230908 02:50:32.584" endtime="20230908 02:50:36.180"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>3</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:50:36.180" endtime="20230908 02:50:36.182"/>
+</kw>
+<kw name="Login" library="Login_Keywords">
+<arg>${email}</arg>
+<arg>${pass}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Email_xpath}</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:36.184" level="INFO">Typing text 'kztRN@utasks.com' into text field '//*[@id="email"]/input'.</msg>
+<status status="PASS" starttime="20230908 02:50:36.183" endtime="20230908 02:50:36.352"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Password_xpath}</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:36.355" level="INFO">Typing text '123456' into text field '//*[@id="password"]/input'.</msg>
+<status status="PASS" starttime="20230908 02:50:36.352" endtime="20230908 02:50:36.514"/>
+</kw>
+<kw name="Click on" library="common">
+<arg>${Login_btn_xpath}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:36.516" level="INFO">Clicking element '//*[@id="root"]/div/div/div/div[1]/div/form/button'.</msg>
+<status status="PASS" starttime="20230908 02:50:36.515" endtime="20230908 02:50:36.600"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:36.514" endtime="20230908 02:50:36.600"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:36.182" endtime="20230908 02:50:36.600"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:50:38.615" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:50:36.601" endtime="20230908 02:50:38.615"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${Home_Page_assertion}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230908 02:50:38.646" level="INFO">Element '//div[@data-testid="inbox-action"]' is displayed.</msg>
+<status status="PASS" starttime="20230908 02:50:38.615" endtime="20230908 02:50:38.646"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:32.381" endtime="20230908 02:50:38.646"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>2</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:50:38.649" endtime="20230908 02:50:38.651"/>
+</kw>
+<kw name="Successfull Add new project" library="Projects_Keywords">
+<kw name="Click on Add project text" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Add_project_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:38.657" level="INFO">Clicking element '//*[@id="root"]/div/main/section/div[1]/div[2]/span[2]'.</msg>
+<status status="PASS" starttime="20230908 02:50:38.656" endtime="20230908 02:50:38.728"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:38.655" endtime="20230908 02:50:38.728"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:38.655" endtime="20230908 02:50:38.728"/>
+</kw>
+<kw name="Add name to the project" library="Projects_Keywords">
+<var>${Pro_name_from_list}</var>
+<kw name="Generate Random String" library="String">
+<var>${Random_num}</var>
+<arg>3</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230908 02:50:38.730" level="INFO">${Random_num} = 577</msg>
+<status status="PASS" starttime="20230908 02:50:38.729" endtime="20230908 02:50:38.730"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Project_name}</var>
+<arg>${Project}${Random_num}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230908 02:50:38.731" level="INFO">${Project_name} = project577</msg>
+<status status="PASS" starttime="20230908 02:50:38.730" endtime="20230908 02:50:38.731"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${name_project_input_field}</arg>
+<arg>${Project_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:38.733" level="INFO">Typing text 'project577' into text field '//input[@class="add-project__name"]'.</msg>
+<status status="PASS" starttime="20230908 02:50:38.732" endtime="20230908 02:50:38.867"/>
+</kw>
+<msg timestamp="20230908 02:50:38.867" level="INFO">${Pro_name_from_list} = project577</msg>
+<status status="PASS" starttime="20230908 02:50:38.728" endtime="20230908 02:50:38.867"/>
+</kw>
+<kw name="Click on add Project to Submit Button" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Project_submit_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:38.871" level="INFO">Clicking element '//*[@id="root"]/div/main/section/div[1]/div[2]/div/button'.</msg>
+<status status="PASS" starttime="20230908 02:50:38.869" endtime="20230908 02:50:38.979"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:38.868" endtime="20230908 02:50:38.979"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:38.868" endtime="20230908 02:50:38.979"/>
+</kw>
+<kw name="Click on added project" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Added_Project_locator}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:38.982" level="INFO">Clicking element '(//div[@data-testid="project-action"])[1]'.</msg>
+<status status="PASS" starttime="20230908 02:50:38.981" endtime="20230908 02:50:39.312"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:38.980" endtime="20230908 02:50:39.312"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:38.980" endtime="20230908 02:50:39.312"/>
+</kw>
+<kw name="Get the project name from home page" library="Projects_Keywords">
+<var>${name_from_home}</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${name}</var>
+<arg>//h2[@data-testid="project-name"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:39.356" level="INFO">${name} = project577</msg>
+<status status="PASS" starttime="20230908 02:50:39.313" endtime="20230908 02:50:39.356"/>
+</kw>
+<msg timestamp="20230908 02:50:39.357" level="INFO">${name_from_home} = project577</msg>
+<status status="PASS" starttime="20230908 02:50:39.313" endtime="20230908 02:50:39.357"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Pro_name_from_list}</arg>
+<arg>${name_from_home}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20230908 02:50:39.357" endtime="20230908 02:50:39.358"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:50:41.369" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:50:39.358" endtime="20230908 02:50:41.369"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:38.654" endtime="20230908 02:50:41.369"/>
+</kw>
+<kw name="Add another project" library="Projects_Keywords">
+<kw name="Click on Add project text" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Add_project_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:41.371" level="INFO">Clicking element '//*[@id="root"]/div/main/section/div[1]/div[2]/span[2]'.</msg>
+<status status="PASS" starttime="20230908 02:50:41.371" endtime="20230908 02:50:41.427"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:41.370" endtime="20230908 02:50:41.427"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:41.370" endtime="20230908 02:50:41.427"/>
+</kw>
+<kw name="Add name to the project" library="Projects_Keywords">
+<kw name="Generate Random String" library="String">
+<var>${Random_num}</var>
+<arg>3</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230908 02:50:41.428" level="INFO">${Random_num} = 377</msg>
+<status status="PASS" starttime="20230908 02:50:41.428" endtime="20230908 02:50:41.428"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Project_name}</var>
+<arg>${Project}${Random_num}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230908 02:50:41.429" level="INFO">${Project_name} = project377</msg>
+<status status="PASS" starttime="20230908 02:50:41.428" endtime="20230908 02:50:41.429"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${name_project_input_field}</arg>
+<arg>${Project_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:41.429" level="INFO">Typing text 'project377' into text field '//input[@class="add-project__name"]'.</msg>
+<status status="PASS" starttime="20230908 02:50:41.429" endtime="20230908 02:50:41.565"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:41.428" endtime="20230908 02:50:41.566"/>
+</kw>
+<kw name="Click on add Project to Submit Button" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Project_submit_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:41.569" level="INFO">Clicking element '//*[@id="root"]/div/main/section/div[1]/div[2]/div/button'.</msg>
+<status status="PASS" starttime="20230908 02:50:41.567" endtime="20230908 02:50:41.649"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:41.566" endtime="20230908 02:50:41.649"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:41.566" endtime="20230908 02:50:41.649"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:50:43.650" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:50:41.649" endtime="20230908 02:50:43.650"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:41.370" endtime="20230908 02:50:43.650"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:50:45.665" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:50:43.650" endtime="20230908 02:50:45.665"/>
+</kw>
+<kw name="Click on Add Task text" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${tasks_text_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:45.667" level="INFO">Clicking element '//span[@class="add-task__text"]'.</msg>
+<status status="PASS" starttime="20230908 02:50:45.666" endtime="20230908 02:50:45.729"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:45.666" endtime="20230908 02:50:45.729"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:45.666" endtime="20230908 02:50:45.730"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>2</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:50:45.730" endtime="20230908 02:50:45.732"/>
+</kw>
+<kw name="Enter Task Name" library="Projects_Keywords">
+<kw name="Generate Random String" library="String">
+<var>${Tasks_name}</var>
+<arg>6</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230908 02:50:45.734" level="INFO">${Tasks_name} = PybFOp</msg>
+<status status="PASS" starttime="20230908 02:50:45.734" endtime="20230908 02:50:45.734"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${tasks_input_field}</arg>
+<arg>${Tasks_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:45.735" level="INFO">Typing text 'PybFOp' into text field '//input[@class="add-task__content"]'.</msg>
+<status status="PASS" starttime="20230908 02:50:45.734" endtime="20230908 02:50:45.874"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:45.733" endtime="20230908 02:50:45.874"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>2</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:50:45.876" endtime="20230908 02:50:45.879"/>
+</kw>
+<kw name="Click on date picker" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${date_picker_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:45.883" level="INFO">Clicking element '//span[@class="add-task__date"]'.</msg>
+<status status="PASS" starttime="20230908 02:50:45.882" endtime="20230908 02:50:45.966"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:45.881" endtime="20230908 02:50:45.967"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:45.880" endtime="20230908 02:50:45.967"/>
+</kw>
+<kw name="Click on Today date" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${today_date}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:45.970" level="INFO">Clicking element '//div[@data-testid="task-date-today"]'.</msg>
+<status status="PASS" starttime="20230908 02:50:45.969" endtime="20230908 02:50:46.055"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:45.968" endtime="20230908 02:50:46.055"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:45.967" endtime="20230908 02:50:46.055"/>
+</kw>
+<kw name="Select the 2nd Project name" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Task_to_project}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:46.058" level="INFO">Clicking element '//span[@class="add-task__project"]'.</msg>
+<status status="PASS" starttime="20230908 02:50:46.057" endtime="20230908 02:50:46.137"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:46.057" endtime="20230908 02:50:46.137"/>
+</kw>
+<kw name="Click on" library="common">
+<arg>${2nd_project}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:46.139" level="INFO">Clicking element '(//div[@data-testid="project-overlay-action"])[2]'.</msg>
+<status status="PASS" starttime="20230908 02:50:46.138" endtime="20230908 02:50:46.227"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:46.137" endtime="20230908 02:50:46.227"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:46.056" endtime="20230908 02:50:46.227"/>
+</kw>
+<kw name="Click on Add task button to Submit" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${Submit_task_btn}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:46.231" level="INFO">Clicking element '//button[@class="add-task__submit"]'.</msg>
+<status status="PASS" starttime="20230908 02:50:46.230" endtime="20230908 02:50:46.317"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:46.229" endtime="20230908 02:50:46.317"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:46.228" endtime="20230908 02:50:46.317"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:50:48.331" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:50:46.318" endtime="20230908 02:50:48.331"/>
+</kw>
+<kw name="Assert that the task is added to the 2nd project" library="Projects_Keywords">
+<kw name="Click on" library="common">
+<arg>${2nd_Project_list}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Button_Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 02:50:48.333" level="INFO">Clicking element '(//div[@data-testid="project-action"])[2]'.</msg>
+<status status="PASS" starttime="20230908 02:50:48.332" endtime="20230908 02:50:48.393"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:48.332" endtime="20230908 02:50:48.393"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:48.332" endtime="20230908 02:50:48.393"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>2</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230908 02:50:48.394" endtime="20230908 02:50:48.395"/>
+</kw>
+<kw name="Task should be exist" library="Projects_Keywords">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${task in list}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230908 02:50:48.752" level="INFO">Element '//*[@id="root"]/div/main/section/div[2]/ul/li/span' is displayed.</msg>
+<status status="PASS" starttime="20230908 02:50:48.397" endtime="20230908 02:50:48.752"/>
+</kw>
+<status status="PASS" starttime="20230908 02:50:48.396" endtime="20230908 02:50:48.752"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230908 02:50:50.755" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230908 02:50:48.754" endtime="20230908 02:50:50.755"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230908 02:50:50.756" endtime="20230908 02:50:54.370"/>
+</kw>
+<tag>Happy</tag>
+<tag>Project</tag>
+<status status="PASS" starttime="20230908 02:50:22.181" endtime="20230908 02:50:54.370"/>
+</test>
+<status status="PASS" starttime="20230908 02:46:26.978" endtime="20230908 02:50:54.373"/>
+</suite>
+<status status="PASS" starttime="20230908 02:46:26.940" endtime="20230908 02:50:54.376"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="7" fail="0" skip="0">Happy</stat>
+<stat pass="7" fail="0" skip="0">Project</stat>
+</tag>
+<suite>
+<stat pass="7" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="7" fail="0" skip="0" id="s1-s1" name="Projects and Tasks TCs">Tests.Projects and Tasks TCs</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230908 02:46:27.425" level="ERROR">Error in file 'C:\Users\zhsz1205\Desktop\Utasks\Resources\PO\Login_Keywords.robot' on line 6: Resource setting requires value.</msg>
+<msg timestamp="20230908 02:46:27.440" level="ERROR">Error in file 'C:\Users\zhsz1205\Desktop\Utasks\Resources\PO\Projects_Keywords.robot' on line 6: Resource setting requires value.</msg>
+</errors>
+</robot>
