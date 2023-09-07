@@ -41,6 +41,7 @@
 - Add a task in a second project
 
 # You can Run Test with Tags
+  ## Open Terminal in your IDE
 - robot   -d Results  -i    Project      Tests
 - robot   -d Results  -i    SignUp      Tests
 - robot   -d Results  -i    Login      Tests
