@@ -39,3 +39,8 @@
 - Verify the cancel button in Add task is working correctly
 - Add Quick Task without adding any Project
 - Add a task in a second project
+
+# You can Run Test with Tags
+- robot   -d Results  -i    Project      Tests
+- robot   -d Results  -i    SignUp      Tests
+- robot   -d Results  -i    Login      Tests
